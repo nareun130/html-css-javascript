@@ -1,0 +1,30 @@
+.card {
+  width: 200px;
+  height: 200px;
+  /* 원근감을 주기위한 속성 -> 커질수록 멀리서 보는 느낌이 난다.*/
+  perspective: 1000px;
+  /* 요소의 표현 */
+  transform-style: preserve-3d;
+  /* 요소의 변화 시간 */
+  transition: transfrom 0.5s;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* 요소의 뒷쪽에서 앞면이 보이게 할 지 설정 
+    ex. 뒤집기 할 때 뒷면의 글씨가 반대로 된 것이 보일지 */
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: #3498db;
+  transform: rotateY(0deg);
+}
+
+.back {
+  background-color: #e75c3c;
+  transform: rotateY(180deg);
+}
