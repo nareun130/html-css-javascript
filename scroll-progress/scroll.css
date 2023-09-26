@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* 요소의 사이즈를 맞추는 것이 용이 
+    ex. 100px 너비에서 border나 padding추가시, 100px + (border혹은 padding)px
+    값이 아닌 padding이나 border값이 포함됨. ->content box 줄어듦 */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  background-color: #090909;
+  color: white;
+}
+
+section {
+  /* vh, vw : 열려잇는 화면 전체의 상대길이 -> %와의 차이 : 스크롤바를 포함 */
+  height: 80vh;
+  width: 80vw;
+  margin: 5rem auto;
+  border: 4px solid white;
+  display: grid;
+  place-items: center;
+}
+
+section h1 {
+  /* 
+    em : 사용되고 있는 요소의 font-size 속성값이 기준
+    rem : 최상위 요소의 font-size 속성값이 기준 */
+  font-size: 3rem;
+}
+
+.scroll-indicator {
+  height: 10px;
+  width: calc(100% - 8rem);
+  position: fixed;
+  top: 1rem;
+  left: 4rem;
+}
+
+.scroll-indicator .progress-bar {
+  height: 100%;
+  width: 0;
+  border-radius: 100px;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+}
